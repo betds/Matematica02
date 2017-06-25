@@ -10,7 +10,6 @@ public:
 	ofVec2f _position, _direction;
 	float _angle;
 	int _speed;
-	int _keyPress;
 
 	Tank();
 	void Update();
