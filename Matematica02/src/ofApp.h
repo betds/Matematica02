@@ -1,10 +1,11 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Matrix3f.h"
 #include "conio.h"
+#include "Matrix3f.h"
+#include "Tank.h"
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
 	public:
 		void setup();
@@ -23,5 +24,13 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		bool tde = true;
+		bool tde = false;
+		
+		Tank tank;
+		Matrix3f world;
+
+		// Turnos:
+		// 0 - P1 Giro do Canhão
+		// 1 - P1 Giro do Tanque
+		// 2 - P1 Movimento do Tanque
 };

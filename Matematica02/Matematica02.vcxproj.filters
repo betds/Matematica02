@@ -10,6 +10,9 @@
     <ClCompile Include="src\Matrix3f.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Tank.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -24,6 +27,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="src\Matrix3f.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Tank.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

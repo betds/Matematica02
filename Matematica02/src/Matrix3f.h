@@ -52,7 +52,7 @@ public:
 	ofVec2f Matrix3f::transform(const ofVec2f& vector, float z) const;
 
 	// Métodos Estáticos
-	static Matrix3f rotation(float angle);
-	static Matrix3f translation(float dx, float dy);
+	static Matrix3f rotate(float angle);
+	static Matrix3f translate(float dx, float dy);
 	static Matrix3f scale(float sx, float sy);
 };

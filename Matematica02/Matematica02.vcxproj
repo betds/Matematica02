@@ -178,10 +178,12 @@
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Matrix3f.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
+    <ClCompile Include="src\Tank.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Matrix3f.h" />
     <ClInclude Include="src\ofApp.h" />
+    <ClInclude Include="src\Tank.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

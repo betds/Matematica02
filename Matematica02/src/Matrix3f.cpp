@@ -210,11 +210,13 @@ Matrix3f Matrix3f::inverse() {
 
 // Transformação (ofVec2f)
 ofVec2f Matrix3f::transform(const ofVec2f &vector, float z) const {
-	ofVec2f aux; 
 	float vec[3] = { vector.x, vector.y, z };
+	ofVec3f aux = ofVec3f(0, 0, 0);
 
-	for (int i = 0; i < 3; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
 			aux[i] += _entry[i][j] * vec[j];
 		}
 	}
@@ -223,7 +225,7 @@ ofVec2f Matrix3f::transform(const ofVec2f &vector, float z) const {
 }
 
 // Métodos Estáticos
-Matrix3f Matrix3f::rotation(float angle) {
+Matrix3f Matrix3f::rotate(float angle) {
 	Matrix3f aux = Matrix3f(
 		cos(ofDegToRad(angle)), sin(ofDegToRad(angle)), 0,
 		-sin(ofDegToRad(angle)), cos(ofDegToRad(angle)), 0,
@@ -233,7 +235,7 @@ Matrix3f Matrix3f::rotation(float angle) {
 	return aux;
 }
 
-Matrix3f Matrix3f::translation(float dx, float dy) {
+Matrix3f Matrix3f::translate(float dx, float dy) {
 	Matrix3f aux = Matrix3f(
 		1, 0, 0,
 		0, 1, 0,

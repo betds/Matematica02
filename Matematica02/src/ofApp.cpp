@@ -220,7 +220,7 @@ void ofApp::setup() {
 		std::cout << "  vetor(" << vetor.x << ", " << vetor.y << ")" << std::endl  << std::endl;
 
 		ofVec2f transformacao = Matrix3f(1, 0, 0, 0, 1, 0, 0, 0, 0).transform(vetor, 1);
-		std::cout << "  transformacao(" << vetor.x << ", " << vetor.y << ")" << std::endl << std::endl << std::endl;
+		std::cout << "  transformacao(" << vetor.x << ", " << vetor.y << ")" << std::endl << std::endl;
 
 		next();
 
@@ -231,32 +231,46 @@ void ofApp::setup() {
 		std::cout << "- Modelo" << std::endl;
 		modelo.print();
 
-		std::cout << "- Rotacao" << std::endl;
-		modelo.rotation(45).print();
+		std::cout << "- Rotacao (45)" << std::endl;
+		modelo.rotate(45).print();
 
-		std::cout << "- Translacao" << std::endl;
-		modelo.translation(10, 10).print();
+		std::cout << "- Translacao (10, 10)" << std::endl;
+		modelo.translate(10, 10).print();
 
-		std::cout << "- Escala" << std::endl;
+		std::cout << "- Escala (2x, 2x)" << std::endl;
 		modelo.scale(2, 2).print();
 
 		next();
 	}
+
+	world = Matrix3f();
+	tank._position = ofVec2f(ofGetWindowWidth() / 2, ofGetWindowHeight() / 2);
+
+	/*
+	tank[1]._position = ofVec2f(ofGetWindowWidth() - 25, ofRandom(25, ofGetWindowHeight() - 25));
+	tank[1]._color = ofColor(0, 0, 200);
+	*/
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::draw() {
-
+	tank.Draw(world);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
+	if (key == OF_KEY_LEFT) {
+		tank._angle -= 0.1f;
+	}
 
+	if (key == OF_KEY_RIGHT) {
+		tank._angle += 0.1f;
+	}
 }
 
 //--------------------------------------------------------------
