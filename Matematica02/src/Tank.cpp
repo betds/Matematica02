@@ -19,8 +19,9 @@ void Tank::Draw(Matrix3f &world) {
 	_tank.setAnchorPercent(0.5, 0.5);
 
 	ofPushMatrix();
-	Matrix3f translate.translate(_position.x, _position.y);
-	Matrix3f rorate = world.rotate(_angle);
-	_tank.draw(0, 0, _tank.getWidth(), _tank.getHeight());
+	world = world.rotate(_angle);
+	world = world.translate(_position.x, _position.y);
+	ofVec2f position = world.transform(_position, 1);
+	_tank.draw(position.x, position.y, _tank.getWidth(), _tank.getHeight());
 	ofPopMatrix();
 }
