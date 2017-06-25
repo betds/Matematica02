@@ -6,7 +6,7 @@
 class Tank {
 
 public:
-	ofImage _tank;
+	ofImage _tank, _barrel;
 	ofVec2f _position, _direction;
 	float _angle;
 	int _speed;
@@ -14,8 +14,4 @@ public:
 	Tank();
 	void Update();
 	void Draw(Matrix3f &world);
-	void CannonRotation();
-	void TankRotation();
-	void TankMoviment();
-	void Threshold();
 };

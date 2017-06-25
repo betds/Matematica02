@@ -265,11 +265,11 @@ void ofApp::draw() {
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	if (key == OF_KEY_LEFT) {
-		tank._angle -= 0.1f;
+		tank._angle--;
 	}
 
 	if (key == OF_KEY_RIGHT) {
-		tank._angle += 0.1f;
+		tank._angle++;
 	}
 }
 
