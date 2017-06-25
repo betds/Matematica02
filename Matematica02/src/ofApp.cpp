@@ -11,7 +11,7 @@ void ofApp::setup() {
 	if (tde) {
 		std::cout << "[ Matematica para Jogos II - TDE ]" << std::endl << std::endl;
 
-		// Construtor padrão (deve criar uma matriz identidade)
+		// Construtor padrÃ£o (deve criar uma matriz identidade)
 		std::cout << "- Construtor Padrao" << std::endl << std::endl;
 		
 		std::cout << "  I" << std::endl; 
@@ -29,7 +29,7 @@ void ofApp::setup() {
 		
 		next();
 
-		// Construtor de cópia
+		// Construtor de cÃ³pia
 		std::cout << "- Construtor de Copia" << std::endl << std::endl;
 		
 		std::cout << "  F" << std::endl;
@@ -41,7 +41,7 @@ void ofApp::setup() {
 		
 		next();
 
-		// Cópia de matriz: operador =
+		// CÃ³pia de matriz: operador =
 		std::cout << "- Copia de Matriz com operador =" << std::endl << std::endl;
 		
 		std::cout << "  F" << std::endl;
@@ -87,7 +87,7 @@ void ofApp::setup() {
 
 		next();
 
-		// [OPCIONAL] Subtração de matrizes: operador -
+		// [OPCIONAL] SubtraÃ§Ã£o de matrizes: operador -
 		std::cout << "- Operadores: Subtracao de Matrizes com operador -" << std::endl << std::endl;
 		
 		std::cout << "  A" << std::endl;
@@ -102,7 +102,7 @@ void ofApp::setup() {
 
 		next();
 
-		// [OPCIONAL] Subtração de matrizes: operador -=
+		// [OPCIONAL] SubtraÃ§Ã£o de matrizes: operador -=
 		std::cout << "- Operadores: Subtracao de Matrizes com operador -=" << std::endl << std::endl;
 		
 		std::cout << "  A" << std::endl;
@@ -117,7 +117,7 @@ void ofApp::setup() {
 
 		next();
 
-		// Multiplicação de matrizes: operador *
+		// MultiplicaÃ§Ã£o de matrizes: operador *
 		std::cout << "- Operadores: Multiplicacao de Matrizes com operador *" << std::endl << std::endl;
 
 		std::cout << "  A" << std::endl;
@@ -131,7 +131,7 @@ void ofApp::setup() {
 		multiplicacao.print();
 		next();
 
-		// Cálculo do Determinante
+		// CÃ¡lculo do Determinante
 		std::cout << "- Calculo do Determinante" << std::endl << std::endl;
 		
 		std::cout << "  A" << std::endl;
@@ -141,7 +141,7 @@ void ofApp::setup() {
 
 		next();
 
-		// Cálculo da Inversa
+		// CÃ¡lculo da Inversa
 		std::cout << "- Calculo da Matriz Inversa" << std::endl << std::endl;
 		
 		std::cout << "  A" << std::endl;
@@ -153,7 +153,7 @@ void ofApp::setup() {
 
 		next();
 
-		// Cálculo da Transposta
+		// CÃ¡lculo da Transposta
 		std::cout << "- Calculo da Matriz Transposta" << std::endl << std::endl;
 
 		std::cout << "  A" << std::endl;
@@ -188,7 +188,7 @@ void ofApp::setup() {
 		next();
 
 		// [OPCIONAL]
-		// Acesso aos elementos pelos métodos a(), b(), c(), d(), e(), f(), g(), h() e k() no formato:
+		// Acesso aos elementos pelos mÃ©todos a(), b(), c(), d(), e(), f(), g(), h() e k() no formato:
 		// [a b c]
 		// [d e f]
 		// [g h k]
@@ -213,7 +213,7 @@ void ofApp::setup() {
 
 		next();
 
-		// Transformação de um ofVec2f pela matriz (multiplicação de vetor pela matriz)
+		// TransformaÃ§Ã£o de um ofVec2f pela matriz (multiplicaÃ§Ã£o de vetor pela matriz)
 		std::cout << "- Transformaca de um ofVec2f pela Matriz" << std::endl << std::endl;
 		
 		ofVec2f vetor = ofVec2f(ofRandom(2), ofRandom(2));
@@ -224,7 +224,7 @@ void ofApp::setup() {
 
 		next();
 
-		// Métodos Fábrica Estáticos (Rotação, Translação e Escala)
+		// MÃ©todos FÃ¡brica EstÃ¡ticos (RotaÃ§Ã£o, TranslaÃ§Ã£o e Escala)
 		std::cout << "- Metodos Fabrica Estaticos" << std::endl << std::endl;
 		
 		Matrix3f modelo = Matrix3f(); 
@@ -265,12 +265,25 @@ void ofApp::draw() {
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
 	if (key == OF_KEY_LEFT) {
-		tank._angle -= 0.1f;
+		tank._angle--;
 	}
 
 	if (key == OF_KEY_RIGHT) {
-		tank._angle += 0.1f;
+		tank._angle++;
 	}
+	
+	// Pegar o input do Player para ver a velocidade que o tank vai andar
+	int velocityType;
+	if(key == '1'){
+		velocityType = 1;
+	}
+	if(key == '2'){
+		velocityType = 2;
+	}
+	if(key == '3'){
+		velocityType = 3;
+	}
+	tank.PlayerInput(velocityType);
 }
 
 //--------------------------------------------------------------

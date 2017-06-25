@@ -28,9 +28,4 @@ class ofApp : public ofBaseApp {
 		
 		Tank tank;
 		Matrix3f world;
-
-		// Turnos:
-		// 0 - P1 Giro do Canhão
-		// 1 - P1 Giro do Tanque
-		// 2 - P1 Movimento do Tanque
 };

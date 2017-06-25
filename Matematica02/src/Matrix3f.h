@@ -55,4 +55,7 @@ public:
 	static Matrix3f rotate(float angle);
 	static Matrix3f translate(float dx, float dy);
 	static Matrix3f scale(float sx, float sy);
+
+	// ofMatrix4x4
+	ofMatrix4x4 to4x4();
 };

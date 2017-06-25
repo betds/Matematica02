@@ -237,9 +237,9 @@ Matrix3f Matrix3f::rotate(float angle) {
 
 Matrix3f Matrix3f::translate(float dx, float dy) {
 	Matrix3f aux = Matrix3f(
-		1, 0, 0,
-		0, 1, 0,
-		dx, dy, 1
+		1, 0, dx,
+		0, 1, dy,
+		0, 0, 1
 	);
 
 	return aux;
@@ -253,4 +253,14 @@ Matrix3f Matrix3f::scale(float sx, float sy) {
 	);
 
 	return aux;
+}
+
+// ofMatrix4x4
+ofMatrix4x4 Matrix3f::to4x4() {
+	ofMatrix4x4 m4x4(
+		a(), b(), c(), 0.0f,
+		d(), e(), f(), 0.0f,
+		0.0, 0.0f, 1.0f, 0.0f,
+		g(), h(), k(), 1.0f);
+	return m4x4;
 }
